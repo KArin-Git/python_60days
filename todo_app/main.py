@@ -8,7 +8,7 @@ while True:
             todos.append(todo)
         case "show":
             for idx, item in enumerate(todos):
-                print(idx + 1, '-',item)
+                print(f"{idx + 1}: {item}")
         case "edit":
             idx = int(input("Number of the todo to edit: "))
             edit_todo = todos[idx - 1]
