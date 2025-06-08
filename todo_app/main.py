@@ -1,6 +1,6 @@
-todos = []
+todos = ['Wash', 'Clean', 'Dry']
 while True:
-    user_action = input("Type add, show, edit, or exit: ")
+    user_action = input("Type add, show, edit, complete, or exit: ")
     user_action = user_action.strip()
     match user_action:
         case "add":
@@ -15,6 +15,11 @@ while True:
             print("The todo that you want to edit is " + edit_todo)
             todos[idx - 1] = input("Enter new todo: ")
             print(todos)
+        case "complete":
+            idx = int(input("Number of the todo to complete: "))
+            # print(f"{idx}: {todos[idx - 1]} was removed")
+            completed_todo = todos.pop(idx - 1)
+            print(f"{completed_todo} is completed")
         case "exit":
             break
 
