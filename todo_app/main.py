@@ -24,3 +24,4 @@ while True:
             break
 
 print("Bye!")
+print("Test")
