@@ -1,11 +1,19 @@
-todos = ['Wash', 'Clean', 'Dry']
 while True:
     user_action = input("Type add, show, edit, complete, or exit: ")
     user_action = user_action.strip()
     match user_action:
         case "add":
-            todo = input("Enter a todo: ")
+            todo = input("Enter a todo: ") + "\n"
+            # open file and read
+            file = open('todos.txt', 'r')
+            # store value from file in todos list
+            todos = file.readlines()
+            # append a new todo list
             todos.append(todo)
+            # open file for overwrite
+            file = open('todos.txt', 'w')
+            # overwrite
+            file.writelines(todos)
         case "show":
             for idx, item in enumerate(todos):
                 print(f"{idx + 1}: {item}")
@@ -24,4 +32,3 @@ while True:
             break
 
 print("Bye!")
-print("Test")
