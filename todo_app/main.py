@@ -4,17 +4,22 @@ while True:
     match user_action:
         case "add":
             todo = input("Enter a todo: ") + "\n"
-            # open file and read
+            # open file and store value in the todos list
             file = open('todos.txt', 'r')
-            # store value from file in todos list
             todos = file.readlines()
+            file.close()
             # append a new todo list
             todos.append(todo)
             # open file for overwrite
             file = open('todos.txt', 'w')
             # overwrite
             file.writelines(todos)
+            file.close()
         case "show":
+            # open file and store value in the todos list
+            file = open('todos.txt', 'r')
+            todos = file.readlines()
+            file.close()
             for idx, item in enumerate(todos):
                 print(f"{idx + 1}: {item}")
         case "edit":
