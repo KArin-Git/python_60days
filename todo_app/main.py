@@ -20,9 +20,8 @@ while True:
             file = open('files/todos.txt', 'r')
             todos = file.readlines()
             file.close()
-            # using list comprehension
-            new_todos = [item.strip('\n') for item in todos]
-            for idx, item in enumerate(new_todos):
+            for idx, item in enumerate(todos):
+                item = item.strip('\n')
                 print(f"{idx + 1} - {item}")
         case "edit":
             idx = int(input("Number of the todo to edit: "))
