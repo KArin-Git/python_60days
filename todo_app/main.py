@@ -20,8 +20,12 @@ while True:
             file = open('files/todos.txt', 'r')
             todos = file.readlines()
             file.close()
-            for idx, item in enumerate(todos):
-                print(f"{idx + 1}: {item}")
+            new_todos = []
+            for item in todos:
+                new_item = item.strip('\n')
+                new_todos.append(new_item)
+            for idx, item in enumerate(new_todos):
+                print(f"{idx + 1} - {item}")
         case "edit":
             idx = int(input("Number of the todo to edit: "))
             edit_todo = todos[idx - 1]
