@@ -20,10 +20,8 @@ while True:
             file = open('files/todos.txt', 'r')
             todos = file.readlines()
             file.close()
-            new_todos = []
-            for item in todos:
-                new_item = item.strip('\n')
-                new_todos.append(new_item)
+            # using list comprehension
+            new_todos = [item.strip('\n') for item in todos]
             for idx, item in enumerate(new_todos):
                 print(f"{idx + 1} - {item}")
         case "edit":
