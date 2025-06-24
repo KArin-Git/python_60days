@@ -4,22 +4,14 @@ while True:
     match user_action:
         case "add":
             todo = input("Enter a todo: ") + "\n"
-            # open file and store value in the todos list
-            file = open('files/todos.txt', 'r')
-            todos = file.readlines() # file.readlines() return a list datatype
-            file.close()
-            # append a new todo list
+            with open('files/todos.txt', 'r') as file:
+                todos = file.readlines()
             todos.append(todo)
-            # open file for overwrite
-            file = open('files/todos.txt', 'w')
-            # overwrite
-            file.writelines(todos)
-            file.close()
+            with open('files/todos.txt', 'w') as file:
+                file.writelines(todos)
         case "show":
-            # open file and store value in the todos list
-            file = open('files/todos.txt', 'r')
-            todos = file.readlines()
-            file.close()
+            with open('files/todos.txt', 'r') as file:
+                todos = file.readlines()
             for idx, item in enumerate(todos):
                 item = item.strip('\n')
                 print(f"{idx + 1} - {item}")
