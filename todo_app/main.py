@@ -17,15 +17,21 @@ while True:
                 print(f"{idx + 1} - {item}")
         case "edit":
             idx = int(input("Number of the todo to edit: "))
-            edit_todo = todos[idx - 1]
-            print("The todo that you want to edit is " + edit_todo)
-            todos[idx - 1] = input("Enter new todo: ")
-            print(todos)
+            with open('files/todos.txt', 'r') as file:
+                todos = file.readlines()
+            edit_todo = input("Enter new todo: ")
+            todos[idx - 1] = edit_todo + '\n'
+            with open('files/todos.txt', 'w') as file:
+                file.writelines(todos)
         case "complete":
             idx = int(input("Number of the todo to complete: "))
-            # print(f"{idx}: {todos[idx - 1]} was removed")
+            with open('files/todos.txt', 'r') as file:
+                todos = file.readlines()
             completed_todo = todos.pop(idx - 1)
+            completed_todo = completed_todo.strip('\n')
             print(f"{completed_todo} is completed")
+            with open('files/todos.txt', 'w') as file:
+                file.writelines(todos)
         case "exit":
             break
 
