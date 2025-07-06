@@ -1,10 +1,10 @@
 password = input("Please enter your password: ")
-result = []
+result = {}
 # length greater or equal to 8
 if len(password) >= 8:
-    result.append(True)
+    result["length"] = True
 else:
-    result.append(False)
+    result["length"] = False
 
 # contain at least 1 digit
 digit = False
@@ -15,13 +15,13 @@ for character in password:
         digit = True
     if character.isupper():
         upper = True
-result.append(digit)
-result.append(upper)
+result["digit"] = digit
+result["upper"] = upper
 
 print(result)
-print(all(result)) # capture False if has
+print(all(result.values()))
 
-if all(result):
+if all(result.values()):
     print("Strong Password")
 else:
     print("Weak Password")
