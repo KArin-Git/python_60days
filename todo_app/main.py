@@ -1,3 +1,5 @@
+from warnings import catch_warnings
+
 while True:
     user_action = input("Type add, show, edit, complete, or exit: ")
     user_action = user_action.strip()
@@ -15,13 +17,17 @@ while True:
             item = item.strip('\n')
             print(f"{idx + 1} - {item}")
     elif user_action.startswith("edit"):
-        idx = int(user_action[5:])
-        with open('files/todos.txt', 'r') as file:
-            todos = file.readlines()
-        edit_todo = input("Enter new todo: ")
-        todos[idx - 1] = edit_todo + '\n'
-        with open('files/todos.txt', 'w') as file:
-            file.writelines(todos)
+        try:
+            idx = int(user_action[5:])
+            with open('files/todos.txt', 'r') as file:
+                todos = file.readlines()
+            edit_todo = input("Enter new todo: ")
+            todos[idx - 1] = edit_todo + '\n'
+            with open('files/todos.txt', 'w') as file:
+                file.writelines(todos)
+        except ValueError:
+            print("Your command is not valid. Please try again.")
+            continue
     elif user_action.startswith("complete"):
         idx = int(user_action[9:])
         with open('files/todos.txt', 'r') as file:
