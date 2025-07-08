@@ -29,14 +29,18 @@ while True:
             print("Your command is not valid. Please try again.")
             continue
     elif user_action.startswith("complete"):
-        idx = int(user_action[9:])
-        with open('files/todos.txt', 'r') as file:
-            todos = file.readlines()
-        completed_todo = todos.pop(idx - 1)
-        completed_todo = completed_todo.strip('\n')
-        print(f"{completed_todo} is completed")
-        with open('files/todos.txt', 'w') as file:
-            file.writelines(todos)
+        try:
+            idx = int(user_action[9:])
+            with open('files/todos.txt', 'r') as file:
+                todos = file.readlines()
+            completed_todo = todos.pop(idx - 1)
+            completed_todo = completed_todo.strip('\n')
+            print(f"{completed_todo} is completed")
+            with open('files/todos.txt', 'w') as file:
+                file.writelines(todos)
+        except IndexError:
+            print("There is no item with that number. Please try again.")
+            continue
     elif user_action.startswith("exit"):
         break
 
