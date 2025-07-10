@@ -6,3 +6,4 @@ Fix drawer
 Read a book
 Add a new member
 Make soup
+Play piano
