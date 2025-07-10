@@ -6,4 +6,3 @@ Fix drawer
 Read a book
 Add a new member
 Make soup
-Make pizza
