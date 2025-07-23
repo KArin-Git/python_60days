@@ -5,6 +5,6 @@ Gardening
 Fix drawer
 Read a book
 Add a new member
-Make soup
+git puMake soup
 Play piano
 Turn off the light.
