@@ -1,8 +1,10 @@
-# from functions import get_todos, write_todos, ad1, ad2, ...
-# from modules import functions ./modules/functions.py
-import functions # modules ./functions.py
+# https://docs.python.org/3.5/tutorial/datastructures.html
+import functions
+import time
 
 # main
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print(f"It is {now}")
 while True:
     user_action = input("Type add, show, edit, complete, or exit: ")
     user_action = user_action.strip()

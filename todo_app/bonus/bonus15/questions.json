@@ -1,0 +1,27 @@
+[
+    {
+        "question_text": "A) Which animal is known as the king of the jungle?",
+        "alternatives": ["Tiger", "Lion", "Elephant","Bear"],
+        "correct_answer": 2
+    },
+    {
+        "question_text": "B) What is the fastest land animal?",
+        "alternatives": ["Cheetah", "Horse", "Gazelle","Leopard"],
+        "correct_answer": 1
+    },
+    {
+        "question_text": "C) Which of the following animals is a mammal?",
+        "alternatives": ["Crocodile", "Shark", "Whale","Penguin"],
+        "correct_answer": 3
+    },
+    {
+        "question_text": "D) What do pandas mostly eat?",
+        "alternatives": ["Bamboo", "Insects", "Fish","Fruits"],
+        "correct_answer": 1
+    },
+    {
+        "question_text": "E) Which bird is known for mimicking human speech?",
+        "alternatives": ["Pigeon", "Sparrow", "Parrot","Owl"],
+        "correct_answer": 3
+    }
+]
