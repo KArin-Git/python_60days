@@ -57,7 +57,7 @@ while True:
                 window['todos'].update(values=todos)
                 window['todo'].update(value='')
             except IndexError:
-                sg.popup("Please select and item first.", font=('Helvetica', 20))
+                sg.popup("Please select an item first.", font=('Helvetica', 20))
         case 'Exit':
             break
         case 'todos':
