@@ -8,3 +8,6 @@ Buy books
 Buy Grocery
 Watch movie
 Play Game
+Learn Python
+Fix the lamp
+Clean the car
