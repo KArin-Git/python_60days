@@ -1,13 +1,5 @@
-Gardening
-Fix drawer
-Read books
-Add a new member
-Make soup
 Turn off the light.
 Buy books
 Buy Grocery
-Watch movie
 Play Game
 Learn Python
-Fix the lamp
-Clean the car
