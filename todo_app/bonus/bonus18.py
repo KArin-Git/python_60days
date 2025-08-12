@@ -1,8 +1,9 @@
 import streamlit as st
 from PIL import Image
 
-# start camera
-camera_image = st.camera_input('Camera')
+with st.expander('Start Camera'):
+    # start camera
+    camera_image = st.camera_input('Camera')
 # camera_image can be None while browser is asking for the camera permission
 if camera_image:
     # create a Pillow img instance
